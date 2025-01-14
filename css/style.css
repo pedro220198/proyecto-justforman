@@ -1,67 +1,113 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     height: 100%;
-    background-color:#250606;
+    background-color: #250606;
     display: flex;
     flex-direction: column;
 }
 
-/*-----Header-----*/
+/*----- Header -----*/
 
-header {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    background-color: #f5853f;
-    width: 100%;
-    height: 50px;
-}
-header nav{
-    justify-content: space-between; 
-    text-align:center;
-}
-header nav ul {
-    list-style-type: none; 
-    display: inline-block;
-}
-header nav ul li{
-    display: inline-block;
-    margin-right: 20px;
-}
-header nav ul li a{
-    color: black;
+/* Estructura general */
+.mi-navbar {
+    background: linear-gradient(to bottom, #f5853f, #c65422); /* De #f5853f a un color más oscuro */
     padding: 10px;
-    text-decoration: none;
+    border-bottom: 2px solid #c65422; /* Agrega un borde más oscuro opcional */
 }
 
-
-/*-----barra de busqueda-----*/
-
-.busqueda input{
-    padding: 5px 10px;
-    border: 1px solid #ffcdbc;
-    border-radius: 5px;
-    margin-right: 5px;
+.mi-container {
+    display: flex;
+    justify-content: space-between; /* Divide en tres partes */
+    align-items: center;
 }
-.busqueda button{
+
+/* Parte izquierda */
+.mi-logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.mi-boton-desplegable {
+    background-color: #000;
     color: white;
     border: none;
-    background-color: #000000;
-    border-radius: 5px;
     padding: 5px 10px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
+/* Agregar margen inferior al botón "Menú" */
+.mi-boton-desplegable {
+    margin-bottom: 10px;
+}
 
+.dropdown-menu {
+    background-color: #ffcdbc;
+    border: none;
+}
 
-/*-----Section-----*/
+.dropdown-item {
+    color: black;
+    text-decoration: none;
+}
 
-.banner{
+.dropdown-item:hover {
+    background-color: #f5853f;
+}
+
+/* Parte central: Barra de búsqueda */
+.mi-busqueda {
+    display: flex;
+    gap: 5px;
+    flex-grow: 1; /* Permite que ocupe espacio disponible */
+    justify-content: center;
+}
+
+.mi-input {
+    width: 100%;
+    max-width: 300px; /* Limita el tamaño máximo */
+    padding: 5px;
+    border: 1px solid #ffcdbc;
+    border-radius: 5px;
+}
+
+.mi-boton {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Parte derecha */
+.mi-derecha {
+    margin-left: auto; /* Alínea al extremo derecho */
+}
+
+.mi-link-usuario {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    background-color: #ffcdbc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.mi-link-usuario:hover {
+    background-color: #f5853f;
+}
+
+/*----- Section -----*/
+
+/* Banner */
+.banner {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -69,59 +115,106 @@ header nav ul li a{
     color: #ffcdbc;
     width: 100%;
     height: 500px;
-    background-image: url("../imagenes/work\ hard.jpg");
+    background-image: url("../imagenes/work hard.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Mantener la imagen fija */
 }
-.banner p{
+
+.banner p {
     margin: 0;
 }
 
-.videos{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Carrusel de videos */
+.carrusel-videos {
     width: 100%;
-    height: 400px;
-    overflow: hidden; /*oculta la barra deslizadora horizontal*/
+    margin: 20px auto;
+    padding: 10px 0;
+    background-color: #250606;
 }
 
-.videos div{
-    padding: 25px;
-}
-
-.enlaces{
+.carrusel-contenido {
+    position: relative;
     display: flex;
-    flex-direction: row;
-    
-    
-}
-
-.enlaces div{
-    text-align:center;
-    margin: 5px;
-    width: 400px;
-    height: 300px;
-    border: 3px solid #7c3626 ;
     overflow: hidden;
 }
 
+.carrusel-elemento {
+    display: none;
+    flex-shrink: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
 
+.carrusel-elemento.activo {
+    display: flex; /* Solo el elemento activo es visible */
+}
 
-.enlaces div a img{
+/* Centrar videos */
+.centrar-video {
+    display: flex;
+    justify-content: center;
+}
+
+/* Controles del carrusel */
+.control-anterior,
+.control-siguiente {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.control-anterior {
+    left: 10px;
+}
+
+.control-siguiente {
+    right: 10px;
+}
+
+.icono-anterior,
+.icono-siguiente {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    filter: invert(1); /* Cambia el color del icono */
+}
+
+/* Enlaces */
+.enlaces {
+    display: flex;
+    flex-direction: row;
+}
+
+.enlaces div {
+    text-align: center;
+    margin: 5px;
+    width: 400px;
+    height: 300px;
+    border: 3px solid #7c3626;
+    overflow: hidden;
+}
+
+.enlaces div a img {
     width: 100%;
     height: 100%;
-    transition: .4s ease;
-}
-img:hover{
-    transform: scale(1.2); /*--- cuando paso el cursor se agranda un poco la imgen ---*/
+    transition: 0.4s ease;
 }
 
+img:hover {
+    transform: scale(1.2); /*--- cuando paso el cursor se agranda un poco la imagen ---*/
+}
 
-/*-----Footer-----*/
-footer{
+/*----- Footer -----*/
+footer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,23 +223,100 @@ footer{
     width: 100%;
     height: 100px;
 }
-footer p{
-    margin: 0%;
+
+footer p {
+    margin: 0;
     color: white;
 }
 
-footer nav ul li{
+footer nav ul li {
     justify-content: center;
     display: inline-block;
 }
 
-footer nav ul li a{
+footer nav ul li a {
     text-decoration: none;
     color: white;
     padding: 10px;
 }
 
-.img-footer img{
+.img-footer img {
     width: 40px;
     height: 40px;
+}
+
+.puntuacion i {
+    font-size: 1.2rem; /* Tamaño de las estrellas */
+    margin-right: 5px; /* Espaciado entre estrellas */
+}
+
+/*----- Media Queries -----*/
+
+/* Pantallas pequeñas (max-width: 576px) */
+@media (max-width: 576px) {
+    .mi-navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mi-logo {
+        height: 30px; /* Ajustar el tamaño del logo */
+    }
+
+    .mi-busqueda {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mi-input {
+        max-width: 100%; /* La barra de búsqueda ocupa todo el ancho */
+    }
+
+    .banner {
+        height: 300px; /* Reduce la altura del banner */
+        background-size: contain; /* Mantener la imagen visible */
+    }
+
+    .enlaces {
+        flex-direction: column; /* Apilar las imágenes de enlaces */
+    }
+
+    .enlaces div {
+        width: 100%; /* Las imágenes ocupan todo el ancho disponible */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+    .centrar-video iframe {
+        width: 100%; /* Videos ajustados a pantallas pequeñas */
+        height: auto;
+    }
+
+    .mi-boton-desplegable {
+        margin-bottom: 20px; /* Más espacio entre el botón y otros elementos */
+    }
+}
+
+/* Pantallas medianas (max-width: 768px) */
+@media (max-width: 768px) {
+    .mi-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner {
+        height: 400px; /* Ajusta la altura del banner */
+    }
+
+    .enlaces {
+        flex-wrap: wrap; /* Permite varias filas de enlaces */
+    }
+
+    .enlaces div {
+        width: 45%; /* Reduce el tamaño para ajustar dos por fila */
+    }
+
+    .centrar-video iframe {
+        width: 90%;
+        height: auto;
+    }
 }
