@@ -1,0 +1,26 @@
+// Funciones y mixins reutilizables
+
+@mixin flex($justify: center, $align: center, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin button-style($bg: $color-negro, $color: $color-blanco) {
+    background-color: $bg;
+    color: $color;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+@mixin responsive($size) {
+    @if $size == small {
+        @media (max-width: 576px) { @content; }
+    } @else if $size == medium {
+        @media (max-width: 768px) { @content; }
+    }
+}

@@ -1,0 +1,38 @@
+@include responsive(small) {
+    .mi-navbar {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .mi-busqueda {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .banner {
+        height: 400px;
+    }
+    .enlaces {
+        flex-direction: column;
+    }
+    .centrar-video iframe {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@include responsive(medium) {
+    .mi-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .banner {
+        height: 400px;
+    }
+    .enlaces div {
+        width: 45%;
+    }
+    .centrar-video iframe {
+        width: 90%;
+        height: auto;
+    }
+}
