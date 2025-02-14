@@ -1,13 +1,5 @@
-$color-0: #250606;
-$color-1: #f5853f;
-$color-2: #c65422;
-$color-3: #ffcdbc;
-$color-4: #7c3626;
-$color-blanco: #ffffff;
-$color-negro: #000;
-
-
 @charset "UTF-8";
+@import "../base/variables";
 
 * {
     margin: 0;
@@ -17,18 +9,17 @@ $color-negro: #000;
 
 body {
     height: 100%;
-    background-color: black;
-    @include flex(column);
+    background-color: $color-0;
 }
 
 
 
-.beneficios {
+.despegador { /* tamaño del main para despegarlo del footer */
     min-height: 80vh;
     padding: 20px;
     }
 
 .puntuacion i {
-    font-size: 1.2rem; /* Tamaño de las estrellas */
-    margin-right: 5px; /* Espaciado entre estrellas */
+    font-size: 1.2rem; 
+    margin-right: 5px; 
 }

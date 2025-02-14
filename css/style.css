@@ -32,21 +32,19 @@ body {
   cursor: pointer;
 }
 
-/* Ajusta el contenedor */
 .mi-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Agregar margen inferior al botón "Menú" */
 .mi-boton-desplegable {
   margin-bottom: 10px;
 }
 
 /* Menú desplegable */
 .dropdown-menu {
-  background-color: #ffcdbc; /* Fondo de color claro */
+  background-color: #ffcdbc; 
   border: none;
 }
 
@@ -56,10 +54,9 @@ body {
 }
 
 .dropdown-item:hover {
-  background-color: #f5853f; /* Fondo de hover */
+  background-color: #f5853f; 
 }
 
-/* Barra de búsqueda (si la tienes) */
 .mi-busqueda {
   display: flex;
   gap: 5px;
@@ -124,7 +121,6 @@ body {
   margin: 0;
 }
 
-/* Carrusel de videos */
 .carrusel-videos {
   width: 100%;
   margin: 20px auto;
@@ -132,16 +128,11 @@ body {
   background-color: #250606;
 }
 
-
-/* Centrar videos */
 .centrar-video {
   display: flex;
   justify-content: center;
 }
 
-
-
-/* Enlaces */
 .enlaces {
   display: flex;
   flex-direction: row;
@@ -162,11 +153,12 @@ body {
   transition: 0.4s ease;
 }
 
-img:hover {
-  transform: scale(1.2); /*--- cuando paso el cursor se agranda un poco la imagen ---*/
+.enlaces img:hover{
+  transform: scale(1.2);
 }
 
-.beneficios {
+
+.despegador {
   min-height: 80vh;
   padding: 20px;
 }
@@ -204,8 +196,8 @@ footer nav ul li a {
 }
 
 .puntuacion i {
-  font-size: 1.2rem; /* Tamaño de las estrellas */
-  margin-right: 5px; /* Espaciado entre estrellas */
+  font-size: 1.2rem; 
+  margin-right: 5px; 
 }
 
 /*----- Media Queries -----*/
@@ -220,33 +212,33 @@ footer nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px; /* Ajustar el tamaño del logo */
+    height: 50px; 
   }
   .mi-busqueda {
     flex-direction: column;
     gap: 10px;
   }
   .mi-input {
-    max-width: 100%; /* La barra de búsqueda ocupa todo el ancho */
+    max-width: 100%; 
   }
   .banner {
-    height: 400px; /* Reduce la altura del banner */
-    background-size: cover; /* Mantener la imagen visible */
+    height: 400px; 
+    background-size: cover; 
   }
   .enlaces {
-    flex-direction: column; /* Apilar las imágenes de enlaces */
+    flex-direction: column; 
   }
   .enlaces div {
-    width: 100%; /* Las imágenes ocupan todo el ancho disponible */
-    height: auto; /* Ajusta la altura automáticamente */
+    width: 100%; 
+    height: auto; 
   }
   .centrar-video iframe {
-    width: 100%; /* Videos ajustados a pantallas pequeñas */
+    width: 100%; 
     height: auto;
   }
   .mi-boton-desplegable {
     margin-right: 10px;
-    margin-bottom: 20px; /* Más espacio entre el botón y otros elementos */
+    margin-bottom: 20px; 
   }
 }
 /* Pantallas medianas (max-width: 768px) */
@@ -268,10 +260,10 @@ footer nav ul li a {
     height: 400px;
   }
   .enlaces {
-    flex-wrap: wrap; /* Permite varias filas de enlaces */
+    flex-wrap: wrap; 
   }
   .enlaces div {
-    width: 45%; /* Reduce el tamaño para ajustar dos por fila */
+    width: 45%; 
   }
   .centrar-video iframe {
     width: 90%;
@@ -279,4 +271,4 @@ footer nav ul li a {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+

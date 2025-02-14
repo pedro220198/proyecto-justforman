@@ -1,11 +1,4 @@
-$color-0: #250606;
-$color-1: #f5853f;
-$color-2: #c65422;
-$color-3: #ffcdbc;
-$color-4: #7c3626;
-$color-blanco: #ffffff;
-$color-negro: #000;
-
+@import "../base/variables";
 
 
 .mi-navbar {
@@ -31,6 +24,24 @@ $color-negro: #000;
     @include flex(center, center, row);
     gap: 5px;
     flex-grow: 1;
+}
+
+.mi-boton-desplegable{
+    margin-bottom: 10px;
+}
+
+.dropdown-menu{
+    background-color: $color-3;
+    border: none;
+}
+
+.dropdown-item{
+    color:#000 !important;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #f5853f;
+    }
 }
 
 .mi-input {

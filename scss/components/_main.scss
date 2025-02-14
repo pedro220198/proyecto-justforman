@@ -1,11 +1,5 @@
-$color-0: #250606;
-$color-1: #f5853f;
-$color-2: #c65422;
-$color-3: #ffcdbc;
-$color-4: #7c3626;
-$color-blanco: #ffffff;
-$color-negro: #000;
-
+@import "../base/variables";
+@import "../base/mq";
 
 
 .banner {
@@ -13,7 +7,9 @@ $color-negro: #000;
     color: $color-3;
     width: 100%;
     height: 500px;
-    background: url("../imagenes/work hard.jpg") no-repeat center;
+    background: url("../imagenes/work hard.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -31,29 +27,558 @@ $color-negro: #000;
 
 .enlaces {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 
     div {
-    text-align: center;
-    margin: 5px;
-    width: 400px;
-    height: 300px;
-    border: 3px solid $color-4;
-    overflow: hidden;
-    }
+        width: 30%;
+        max-width: 300px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        transition: transform 0.3s ease-in-out;
 
-    div a img {
-    width: 100%;
-    height: 100%;
-    transition: 0.4s ease;
+        &:hover {
+            transform: scale(1.05);
+        }
 
-    &:hover {
-        transform: scale(1.2);
-    }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative; 
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        
+        &::after {
+            content: attr(data-text);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+            pointer-events: none; 
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
     }
 }
 
-.beneficios {
-    min-height: 80vh;
-    padding: 20px;
+
+
+.nutricionMain {
+    @include flex(center, center, column);
+
+    h1{
+        color: $color-2;
+        text-shadow: 5px 1px 13px black; 
+    }
+
+    .bannerNutricion {
+        @include flex(center, center, row);
+        color: $color-3;
+        width: 100%;
+        height: 500px;
+        background: url("../imagenes/nutricionBanner.jpg"); 
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .tituloNutricion {
+        width: 80%;
+        margin: 20px;
+        border: 2px solid $color-negro; 
+        padding: 10px; 
+        border-radius: 50px; 
+        background: linear-gradient(135deg, $color-4, $color-2); 
+        transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out; 
+    
+        &:hover {
+            box-shadow: 0 0 0 4px $color-negro, 0 0 0 8px $color-2;
+            transform: scale(1.02); 
+        }
+    
+        h4 {
+            text-align: center;
+            color: $color-1;
+            padding: 5px;
+            border-radius: 5px; 
+        }
+    }
+
+    .tarjetas {
+        @include flex(center, center, row);
+        flex-wrap: wrap;
+        position: relative;
+        width: 1100px;
+        padding: 30px;
+
+        .tarjeta {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background-color: $color-blanco;
+            margin: 30px 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: 0.5s ease;
+
+            &:hover .parrafoNutricion {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .imgNutricion {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                transition: 0.5s ease;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.3s ease; 
+                }
+                    &:hover img {
+                    transform: scale(1.05);           
+                }
+            }
+
+            .parrafoNutricion {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 20px;
+                text-align: center;
+                color: $color-negro;
+                transform: translateY(100%);
+                transition: 0.5s ease;
+                opacity: 0;
+                z-index: 2;
+            }
+        }
+    }
+
+    .textoDestacado{
+        color: $color-2;
+    }
+}
+
+
+.bannerHabilidades{
+    @include flex(center, center, row);
+    color: $color-2;
+    width: 100%;
+    height: 500px;
+    background: url("../imagenes/seductor.jpg"); 
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.tituloHabilidades {
+    width: 95%;
+    margin: 20px;
+    border: 2px solid $color-negro; 
+    padding: 10px; 
+    border-radius: 50px; 
+    background: linear-gradient(135deg, $color-4, $color-2); 
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out; 
+
+    &:hover {
+        box-shadow: 0 0 0 4px $color-negro, 0 0 0 8px $color-2;
+        transform: scale(1.02); 
+    }
+
+    h4 {
+        text-align: center;
+        color: $color-1;
+        padding: 5px;
+        border-radius: 5px; 
+    }
+}
+
+.bannerFitness{
+    @include flex(center, center, row);
+    color: $color-2;
+    width: 100%;
+    height: 500px;
+    background: url("../imagenes/fitness banner.jpg"); 
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.tituloFitness {
+    width: 95%;
+    margin: 20px;
+    border: 2px solid $color-negro; 
+    padding: 10px; 
+    border-radius: 50px; 
+    background: linear-gradient(135deg, $color-4, $color-2); 
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out; 
+
+    &:hover {
+        box-shadow: 0 0 0 4px $color-negro, 0 0 0 8px $color-2;
+        transform: scale(1.02); 
+    }
+
+    h4 {
+        text-align: center;
+        color: $color-1;
+        padding: 5px;
+        border-radius: 5px; 
+    }
+}
+
+
+
+
+.finanzasMain {
+    @include flex(center, center, column);
+
+    .tituloFinanzas {
+        width: 80%;
+        margin: 20px;
+        border: 2px solid $color-negro; 
+        padding: 10px; 
+        border-radius: 50px; 
+        background: linear-gradient(135deg, $color-4, $color-2); 
+        transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out; 
+    
+        &:hover {
+            box-shadow: 0 0 0 4px $color-negro, 0 0 0 8px $color-2;
+            transform: scale(1.02); 
+        }
+    
+        h4 {
+            text-align: center;
+            color: $color-1;
+            padding: 5px;
+            border-radius: 5px; 
+        }
+    }
+
+    h1{
+        color: $color-2;
+        text-shadow: 5px 1px 13px black; 
+    }
+
+    .bannerFinanzas{
+        @include flex(center, center, row);
+        color: $color-2;
+        width: 100%;
+        height: 500px;
+        background: url("../imagenes/finanzas banner.jpg"); 
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .tarjetasFinanzas {
+        @include flex(center, center, row);
+        flex-wrap: wrap;
+        position: relative;
+        width: 1100px;
+        padding: 30px;
+
+        .tarjetaFinanzas {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background-color: $color-blanco;
+            margin: 30px 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: 0.5s ease;
+
+            &:hover .parrafoFinanzas {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .linkFinanzas {
+                display: block;            
+                text-align: center;        
+                margin-bottom: 10px;
+            
+                img {
+                    transition: transform 0.3s ease;  
+                }
+            
+                &:hover img {
+                    transform: scale(1.05);           
+                }
+            
+                &:after {
+                    content: "Ver más";               
+                    display: block;
+                    color: blue;
+                    text-decoration: underline;
+                    font-weight: bold;
+                    margin-top: 5px;
+                }
+            }
+            
+
+            .imgFinanzas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                transition: 0.5s ease;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .parrafoFinanzas {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 20px;
+                text-align: center;
+                color: $color-negro;
+                transform: translateY(100%);
+                transition: 0.5s ease;
+                opacity: 0;
+                z-index: 2;
+            }
+        }
+    }
+
+    .textoDestacado{
+        color: $color-2;
+    }
+
+    .comentariosContainer {
+        @include flex (flex-end, column);
+        border: 1px solid $color-2; 
+        padding: 10px;
+        gap: 10px;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        max-width: 500px; 
+        margin: 20px auto; 
+    }
+    
+    .comentarioInput {
+        width: 200%;
+        height: 100px;
+        padding: 10px;
+        border: 1px solid $color-0;
+        border-radius: 6px;
+        resize: none;
+        font-family: Arial, sans-serif;
+        outline: none;
+    
+        &:focus {
+            border-color: $color-4; 
+            box-shadow: 0 0 5px $color-3;
+        }
+    }
+    
+    .btnEnviar {
+        background-color: $color-1; 
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    
+        &:hover {
+            background-color: $color-0; 
+        }
+    }
+    
+}
+
+.merchMain{
+    .merchBanner{
+        @include flex(center, center, row);
+        color: $color-2;
+        width: 100%;
+        height:720px;
+        background: url("../imagenes/merch fondo.jpg"); 
+        background-position: center;
+        background-size: cover;
+
+    }
+}
+
+.motivacionMain{
+
+    @include flex(center, center, column);
+
+    .bannerMotivacion{
+        @include flex(center, center, row);
+        color: $color-2;
+        width: 100%;
+        height:500px;
+        background: url("../imagenes/motivacion banner.jpg"); 
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    
+    .tituloConsejos {
+        width: 80%;
+        margin: 20px;
+        border: 2px solid $color-negro; 
+        padding: 10px; 
+        border-radius: 50px; 
+        background: linear-gradient(135deg, $color-4, $color-2); 
+        transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out; 
+    
+        &:hover {
+            box-shadow: 0 0 0 4px $color-negro, 0 0 0 8px $color-2;
+            transform: scale(1.02); 
+        }
+    
+        h4 {
+            text-align: center;
+            color: $color-1;
+            padding: 5px;
+            border-radius: 5px; 
+        }
+    }
+    
+    
+    
+    
+
+    .tarjetas{
+        @include flex(center, center, row);
+        flex-wrap: wrap;
+        position: relative;
+        width: 1100px;
+        padding: 30px;
+
+        .tarjetaMotivacion {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background-color: $color-blanco;
+            margin: 30px 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: 0.5s ease;
+
+            &:hover .parrafoMotivacion {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .imgMotivacion {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                transition: 0.5s ease;
+
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.3s ease; 
+                }
+                    &:hover img {
+                    transform: scale(1.05);           
+                }
+            }
+
+            .parrafoMotivacion {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.9);
+                padding: 20px;
+                text-align: center;
+                color: $color-negro;
+                transform: translateY(100%);
+                transition: 0.5s ease;
+                opacity: 0;
+                z-index: 2;
+            }
+        }
+    }
+
+    .mensajeMotivador {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 25px;
+        background: linear-gradient(135deg, $color-4, $color-2);
+        border-radius: 15px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        border-left: 6px solid $color-1;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+    
+        p {
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0.7;
+        }
+    
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
+            
+            p {
+                opacity: 1;
+            }
+        }
+    }
+    
+    
+    
 }

@@ -7,48 +7,133 @@
 
 body {
   height: 100%;
-  background-color: black;
-  display: flex;
-  justify-content: column;
-  align-items: center;
-  flex-direction: row;
+  background-color: #250606;
 }
 
-.beneficios {
+.despegador { /* tamaño del main para despegarlo del footer */
   min-height: 80vh;
   padding: 20px;
 }
 
 .puntuacion i {
-  font-size: 1.2rem; /* Tamaño de las estrellas */
-  margin-right: 5px; /* Espaciado entre estrellas */
+  font-size: 1.2rem;
+  margin-right: 5px;
 }
 
 @media (max-width: 576px) {
-  .mi-navbar {
+  /*header general*/
+  /* videos index*/
+  /*Nutricion*/
+  /*Motivacional*/
+}
+@media (max-width: 576px) and (max-width: 768px) {
+  .mi-container {
     flex-direction: column;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .mi-busqueda {
-    flex-direction: column;
+    align-items: center;
     gap: 10px;
   }
-  .banner {
-    height: 400px;
+  .mi-busqueda {
+    width: 100%;
+    justify-content: center;
+  }
+  .mi-derecha {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .mi-link-usuario {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
   }
   .enlaces {
     flex-direction: column;
+    align-items: center;
+  }
+  .enlaces div {
+    width: 80%;
+  }
+}
+@media (max-width: 576px) {
+  .banner {
+    height: 400px;
   }
   .centrar-video iframe {
     width: 100%;
     height: auto;
   }
+  .nutricionMain .bannerNutricion {
+    height: 400px;
+  }
+  .nutricionMain .tarjetas {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .nutricionMain .tarjetas .tarjeta {
+    width: 50%;
+    margin: 15px;
+  }
+  .nutricionMain .imgNutricion img {
+    width: 100%;
+    height: 300px;
+  }
+  .nutricionMain .textoDestacado {
+    text-align: center;
+  }
+  .motivacionMain .bannerMotivacion {
+    height: 400px;
+  }
+  .motivacionMain .tarjetas {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .motivacionMain .tarjetaMotivacion {
+    width: 50%;
+    margin: 15px;
+  }
+  .motivacionMain .imgMotivacion img {
+    width: 100%;
+    height: 300px;
+  }
+  .finanzasMain .bannerFinanzas {
+    height: 400px;
+  }
+  .finanzasMain .tarjetasFinanzas {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .finanzasMain .tarjetasFinanzas .tarjetaFinanzas {
+    width: 50%;
+    margin: 15px;
+  }
+  .finanzasMain .imgFinanzas img {
+    width: 100%;
+    height: 300px;
+  }
 }
-@media (max-width: 768px) {
+@media (max-width: 766px) {
   .mi-container {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+  }
+  .mi-busqueda {
+    width: 100%;
+    justify-content: center;
+  }
+  .mi-derecha {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .mi-link-usuario {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
   }
   .banner {
     height: 400px;
@@ -60,13 +145,50 @@ body {
     width: 90%;
     height: auto;
   }
+  .enlaces div {
+    width: 45%;
+  }
+  .nutricionMain .bannerNutricion {
+    height: 400px;
+  }
+  .nutricionMain .tarjetas {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .nutricionMain .tarjeta {
+    width: 50%;
+    margin: 15px;
+  }
+  .nutricionMain .imgNutricion img {
+    width: 100%;
+    height: 300px;
+  }
+  .nutricionMain .textoDestacado {
+    text-align: center;
+  }
+  /*Motivacional*/
+  .motivacionMain .bannerMotivacion {
+    height: 400px;
+  }
+  .motivacionMain .tarjetas {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .motivacionMain .tarjetaMotivacion {
+    width: 50%;
+    margin: 15px;
+  }
+  .motivacionMain .imgMotivacion img {
+    width: 100%;
+    height: 300px;
+  }
 }
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  background-color: black;
+  background-color: #000;
   padding: 10px;
   width: 100%;
   height: 100px;
@@ -74,7 +196,7 @@ footer {
 
 footer p {
   margin: 0;
-  color: white;
+  color: #ffffff;
 }
 
 footer nav ul li {
@@ -83,7 +205,7 @@ footer nav ul li {
 }
 footer nav ul li a {
   text-decoration: none;
-  color: white;
+  color: #ffffff;
   padding: 10px;
 }
 
@@ -134,6 +256,23 @@ footer nav ul li a {
   flex-grow: 1;
 }
 
+.mi-boton-desplegable {
+  margin-bottom: 10px;
+}
+
+.dropdown-menu {
+  background-color: #ffcdbc;
+  border: none;
+}
+
+.dropdown-item {
+  color: #000 !important;
+  text-decoration: none;
+}
+.dropdown-item:hover {
+  background-color: #f5853f;
+}
+
 .mi-input {
   width: 100%;
   max-width: 300px;
@@ -159,6 +298,169 @@ footer nav ul li a {
   background-color: #f5853f;
 }
 
+@media (max-width: 576px) {
+  /*header general*/
+  /* videos index*/
+  /*Nutricion*/
+  /*Motivacional*/
+}
+@media (max-width: 576px) and (max-width: 768px) {
+  .mi-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .mi-busqueda {
+    width: 100%;
+    justify-content: center;
+  }
+  .mi-derecha {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .mi-link-usuario {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+  .enlaces {
+    flex-direction: column;
+    align-items: center;
+  }
+  .enlaces div {
+    width: 80%;
+  }
+}
+@media (max-width: 576px) {
+  .banner {
+    height: 400px;
+  }
+  .centrar-video iframe {
+    width: 100%;
+    height: auto;
+  }
+  .nutricionMain .bannerNutricion {
+    height: 400px;
+  }
+  .nutricionMain .tarjetas {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .nutricionMain .tarjetas .tarjeta {
+    width: 50%;
+    margin: 15px;
+  }
+  .nutricionMain .imgNutricion img {
+    width: 100%;
+    height: 300px;
+  }
+  .nutricionMain .textoDestacado {
+    text-align: center;
+  }
+  .motivacionMain .bannerMotivacion {
+    height: 400px;
+  }
+  .motivacionMain .tarjetas {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .motivacionMain .tarjetaMotivacion {
+    width: 50%;
+    margin: 15px;
+  }
+  .motivacionMain .imgMotivacion img {
+    width: 100%;
+    height: 300px;
+  }
+  .finanzasMain .bannerFinanzas {
+    height: 400px;
+  }
+  .finanzasMain .tarjetasFinanzas {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .finanzasMain .tarjetasFinanzas .tarjetaFinanzas {
+    width: 50%;
+    margin: 15px;
+  }
+  .finanzasMain .imgFinanzas img {
+    width: 100%;
+    height: 300px;
+  }
+}
+@media (max-width: 766px) {
+  .mi-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .mi-busqueda {
+    width: 100%;
+    justify-content: center;
+  }
+  .mi-derecha {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .mi-link-usuario {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+  .banner {
+    height: 400px;
+  }
+  .enlaces div {
+    width: 45%;
+  }
+  .centrar-video iframe {
+    width: 90%;
+    height: auto;
+  }
+  .enlaces div {
+    width: 45%;
+  }
+  .nutricionMain .bannerNutricion {
+    height: 400px;
+  }
+  .nutricionMain .tarjetas {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .nutricionMain .tarjeta {
+    width: 50%;
+    margin: 15px;
+  }
+  .nutricionMain .imgNutricion img {
+    width: 100%;
+    height: 300px;
+  }
+  .nutricionMain .textoDestacado {
+    text-align: center;
+  }
+  /*Motivacional*/
+  .motivacionMain .bannerMotivacion {
+    height: 400px;
+  }
+  .motivacionMain .tarjetas {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .motivacionMain .tarjetaMotivacion {
+    width: 50%;
+    margin: 15px;
+  }
+  .motivacionMain .imgMotivacion img {
+    width: 100%;
+    height: 300px;
+  }
+}
 .banner {
   display: flex;
   justify-content: center;
@@ -167,7 +469,9 @@ footer nav ul li a {
   color: #ffcdbc;
   width: 100%;
   height: 500px;
-  background: url("../imagenes/work hard.jpg") no-repeat center;
+  background: url("../imagenes/work hard.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -188,28 +492,519 @@ footer nav ul li a {
 
 .enlaces {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 .enlaces div {
-  text-align: center;
-  margin: 5px;
-  width: 400px;
-  height: 300px;
-  border: 3px solid #7c3626;
+  width: 30%;
+  max-width: 300px;
+  height: 200px;
   overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease-in-out;
 }
-.enlaces div a img {
+.enlaces div:hover {
+  transform: scale(1.05);
+}
+.enlaces div a {
+  display: block;
   width: 100%;
   height: 100%;
-  transition: 0.4s ease;
+  position: relative;
 }
-.enlaces div a img:hover {
-  transform: scale(1.2);
+.enlaces div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+.enlaces div::after {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  pointer-events: none;
+}
+.enlaces div:hover::after {
+  opacity: 1;
 }
 
-.beneficios {
-  min-height: 80vh;
+.nutricionMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.nutricionMain h1 {
+  color: #c65422;
+  text-shadow: 5px 1px 13px black;
+}
+.nutricionMain .bannerNutricion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #ffcdbc;
+  width: 100%;
+  height: 500px;
+  background: url("../imagenes/nutricionBanner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.nutricionMain .tituloNutricion {
+  width: 80%;
+  margin: 20px;
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #7c3626, #c65422);
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.nutricionMain .tituloNutricion:hover {
+  box-shadow: 0 0 0 4px #000, 0 0 0 8px #c65422;
+  transform: scale(1.02);
+}
+.nutricionMain .tituloNutricion h4 {
+  text-align: center;
+  color: #f5853f;
+  padding: 5px;
+  border-radius: 5px;
+}
+.nutricionMain .tarjetas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  width: 1100px;
+  padding: 30px;
+}
+.nutricionMain .tarjetas .tarjeta {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: #ffffff;
+  margin: 30px 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+.nutricionMain .tarjetas .tarjeta:hover .parrafoNutricion {
+  transform: translateY(0);
+  opacity: 1;
+}
+.nutricionMain .tarjetas .tarjeta .imgNutricion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: 0.5s ease;
+}
+.nutricionMain .tarjetas .tarjeta .imgNutricion img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.nutricionMain .tarjetas .tarjeta .imgNutricion:hover img {
+  transform: scale(1.05);
+}
+.nutricionMain .tarjetas .tarjeta .parrafoNutricion {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
+  text-align: center;
+  color: #000;
+  transform: translateY(100%);
+  transition: 0.5s ease;
+  opacity: 0;
+  z-index: 2;
+}
+.nutricionMain .textoDestacado {
+  color: #c65422;
+}
+
+.bannerHabilidades {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #c65422;
+  width: 100%;
+  height: 500px;
+  background: url("../imagenes/seductor.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.tituloHabilidades {
+  width: 95%;
+  margin: 20px;
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #7c3626, #c65422);
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.tituloHabilidades:hover {
+  box-shadow: 0 0 0 4px #000, 0 0 0 8px #c65422;
+  transform: scale(1.02);
+}
+.tituloHabilidades h4 {
+  text-align: center;
+  color: #f5853f;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.bannerFitness {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #c65422;
+  width: 100%;
+  height: 500px;
+  background: url("../imagenes/fitness banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.tituloFitness {
+  width: 95%;
+  margin: 20px;
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #7c3626, #c65422);
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.tituloFitness:hover {
+  box-shadow: 0 0 0 4px #000, 0 0 0 8px #c65422;
+  transform: scale(1.02);
+}
+.tituloFitness h4 {
+  text-align: center;
+  color: #f5853f;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.finanzasMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.finanzasMain .tituloFinanzas {
+  width: 80%;
+  margin: 20px;
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #7c3626, #c65422);
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.finanzasMain .tituloFinanzas:hover {
+  box-shadow: 0 0 0 4px #000, 0 0 0 8px #c65422;
+  transform: scale(1.02);
+}
+.finanzasMain .tituloFinanzas h4 {
+  text-align: center;
+  color: #f5853f;
+  padding: 5px;
+  border-radius: 5px;
+}
+.finanzasMain h1 {
+  color: #c65422;
+  text-shadow: 5px 1px 13px black;
+}
+.finanzasMain .bannerFinanzas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #c65422;
+  width: 100%;
+  height: 500px;
+  background: url("../imagenes/finanzas banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.finanzasMain .tarjetasFinanzas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  width: 1100px;
+  padding: 30px;
+}
+.finanzasMain .tarjetasFinanzas .tarjetaFinanzas {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: #ffffff;
+  margin: 30px 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+.finanzasMain .tarjetasFinanzas .tarjetaFinanzas:hover .parrafoFinanzas {
+  transform: translateY(0);
+  opacity: 1;
+}
+.finanzasMain .tarjetasFinanzas .tarjetaFinanzas .linkFinanzas {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.finanzasMain .tarjetasFinanzas .tarjetaFinanzas .linkFinanzas img {
+  transition: transform 0.3s ease;
+}
+.finanzasMain .tarjetasFinanzas .tarjetaFinanzas .linkFinanzas:hover img {
+  transform: scale(1.05);
+}
+.finanzasMain .tarjetasFinanzas .tarjetaFinanzas .linkFinanzas:after {
+  content: "Ver más";
+  display: block;
+  color: blue;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-top: 5px;
+}
+.finanzasMain .tarjetasFinanzas .tarjetaFinanzas .imgFinanzas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: 0.5s ease;
+}
+.finanzasMain .tarjetasFinanzas .tarjetaFinanzas .imgFinanzas img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.finanzasMain .tarjetasFinanzas .tarjetaFinanzas .parrafoFinanzas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  text-align: center;
+  color: #000;
+  transform: translateY(100%);
+  transition: 0.5s ease;
+  opacity: 0;
+  z-index: 2;
+}
+.finanzasMain .textoDestacado {
+  color: #c65422;
+}
+.finanzasMain .comentariosContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: column;
+  flex-direction: row;
+  border: 1px solid #c65422;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 500px;
+  margin: 20px auto;
+}
+.finanzasMain .comentarioInput {
+  width: 200%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #250606;
+  border-radius: 6px;
+  resize: none;
+  font-family: Arial, sans-serif;
+  outline: none;
+}
+.finanzasMain .comentarioInput:focus {
+  border-color: #7c3626;
+  box-shadow: 0 0 5px #ffcdbc;
+}
+.finanzasMain .btnEnviar {
+  background-color: #f5853f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.finanzasMain .btnEnviar:hover {
+  background-color: #250606;
+}
+
+.merchMain .merchBanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #c65422;
+  width: 100%;
+  height: 720px;
+  background: url("../imagenes/merch fondo.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.motivacionMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.motivacionMain .bannerMotivacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #c65422;
+  width: 100%;
+  height: 500px;
+  background: url("../imagenes/motivacion banner.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.motivacionMain .tituloConsejos {
+  width: 80%;
+  margin: 20px;
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #7c3626, #c65422);
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.motivacionMain .tituloConsejos:hover {
+  box-shadow: 0 0 0 4px #000, 0 0 0 8px #c65422;
+  transform: scale(1.02);
+}
+.motivacionMain .tituloConsejos h4 {
+  text-align: center;
+  color: #f5853f;
+  padding: 5px;
+  border-radius: 5px;
+}
+.motivacionMain .tarjetas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  width: 1100px;
+  padding: 30px;
+}
+.motivacionMain .tarjetas .tarjetaMotivacion {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: #ffffff;
+  margin: 30px 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+.motivacionMain .tarjetas .tarjetaMotivacion:hover .parrafoMotivacion {
+  transform: translateY(0);
+  opacity: 1;
+}
+.motivacionMain .tarjetas .tarjetaMotivacion .imgMotivacion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: 0.5s ease;
+}
+.motivacionMain .tarjetas .tarjetaMotivacion .imgMotivacion img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.motivacionMain .tarjetas .tarjetaMotivacion .imgMotivacion:hover img {
+  transform: scale(1.05);
+}
+.motivacionMain .tarjetas .tarjetaMotivacion .parrafoMotivacion {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  text-align: center;
+  color: #000;
+  transform: translateY(100%);
+  transition: 0.5s ease;
+  opacity: 0;
+  z-index: 2;
+}
+.motivacionMain .mensajeMotivador {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 25px;
+  background: linear-gradient(135deg, #7c3626, #c65422);
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  border-left: 6px solid #f5853f;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+.motivacionMain .mensajeMotivador p {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.7;
+}
+.motivacionMain .mensajeMotivador:hover {
+  transform: scale(1.05);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
+}
+.motivacionMain .mensajeMotivador:hover p {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=estilos.css.map */

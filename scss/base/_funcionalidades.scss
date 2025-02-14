@@ -21,6 +21,6 @@
     @if $size == small {
         @media (max-width: 576px) { @content; }
     } @else if $size == medium {
-        @media (max-width: 768px) { @content; }
+        @media (max-width: 766px) { @content; }
     }
 }
